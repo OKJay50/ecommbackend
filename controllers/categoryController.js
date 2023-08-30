@@ -1,6 +1,6 @@
 import Category from '../models/Category.js';
 
-const categoryController = {
+module.exports = {
   // Get all categories
   getAllCategories: async (req, res) => {
     try {
@@ -46,4 +46,3 @@ const categoryController = {
   },
 };
 
-export default categoryController;

@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { default as createCategory, default as deleteCategory, default as getAllCategories, default as updateCategory } from '../controllers/categoryController.js';
+const { createCategory,  deleteCategory,  getAllCategories,  updateCategory } = require  ('../controllers/categoryController.js');
 
 
 import {
