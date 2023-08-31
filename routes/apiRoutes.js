@@ -1,40 +1,26 @@
-import express from 'express';
-
-const { createCategory,  deleteCategory,  getAllCategories,  updateCategory } = require  ('../controllers/categoryController.js');
-
-
-import {
-  createProduct,
-  deleteProduct,
-  getAllProducts,
-  updateProduct,
-} from '../controllers/productController.js';
-
-import {
-  createTag,
-  deleteTag,
-  getAllTags,
-  updateTag,
-} from '../controllers/tagController.js';
+const express = require('express');
+const categoryController = require('../controllers/categoryController.js');
+const productController = require('../controllers/productController.js');
+const tagController = require('../controllers/tagController.js');
 
 const router = express.Router();
-// Check Routes With Tutor
+
 // Categories Routes
-router.get('/Category', getAllCategories);
-router.post('/Category', createCategory);
-router.put('/Category/:id', updateCategory);
-router.delete('/Category/:id', deleteCategory);
+router.get('/Category', categoryController.getAllCategories);
+router.post('/Category', categoryController.createCategory);
+router.put('/Category/:id', categoryController.updateCategory);
+router.delete('/Category/:id', categoryController.deleteCategory);
 
 // Products Routes
-router.get('/Product', getAllProducts);
-router.post('/Product', createProduct);
-router.put('/Product/:id', updateProduct);
-router.delete('/Product/:id', deleteProduct);
+router.get('/Product', productController.getAllProducts);
+router.post('/Product', productController.createProduct);
+router.put('/Product/:id', productController.updateProduct);
+router.delete('/Product/:id', productController.deleteProduct);
 
 // Tags Routes
-router.get('/Tag', getAllTags);
-router.post('/Tag', createTag);
-router.put('/Tag/:id', updateTag);
-router.delete('/Tag/:id', deleteTag);
+router.get('/Tag', tagController.getAllTags);
+router.post('/Tag', tagController.createTag);
+router.put('/Tag/:id', tagController.updateTag);
+router.delete('/Tag/:id', tagController.deleteTag);
 
-export default router;
+module.exports = router;

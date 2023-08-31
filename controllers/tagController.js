@@ -1,6 +1,6 @@
-import Tag from '../models/Tag.js';
+const Tag = require('../models/Tag.js');
 
-export const getAllTags = async (req, res) => {
+const getAllTags = async (req, res) => {
   try {
     const tags = await Tag.findAll();
     res.json(tags);
@@ -9,7 +9,7 @@ export const getAllTags = async (req, res) => {
   }
 };
 
-export const createTag = async (req, res) => {
+const createTag = async (req, res) => {
   try {
     const newTag = await Tag.create(req.body);
     res.status(201).json(newTag);
@@ -18,7 +18,7 @@ export const createTag = async (req, res) => {
   }
 };
 
-export const updateTag = async (req, res) => {
+const updateTag = async (req, res) => {
   try {
     const updatedTag = await Tag.update(req.body, {
       where: { id: req.params.id },
@@ -29,7 +29,7 @@ export const updateTag = async (req, res) => {
   }
 };
 
-export const deleteTag = async (req, res) => {
+const deleteTag = async (req, res) => {
   try {
     await Tag.destroy({
       where: { id: req.params.id },
@@ -38,4 +38,11 @@ export const deleteTag = async (req, res) => {
   } catch (error) {
     res.status(500).json(error);
   }
+};
+
+module.exports = {
+  getAllTags,
+  createTag,
+  updateTag,
+  deleteTag,
 };

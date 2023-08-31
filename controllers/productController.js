@@ -1,6 +1,6 @@
-import Product from '../models/Product.js';
+const Product = require('../models/Product.js');
 
-export const getAllProducts = async (req, res) => {
+const getAllProducts = async (req, res) => {
   try {
     const products = await Product.findAll();
     res.json(products);
@@ -9,7 +9,7 @@ export const getAllProducts = async (req, res) => {
   }
 };
 
-export const createProduct = async (req, res) => {
+const createProduct = async (req, res) => {
   try {
     const newProduct = await Product.create(req.body);
     res.status(201).json(newProduct);
@@ -18,7 +18,7 @@ export const createProduct = async (req, res) => {
   }
 };
 
-export const updateProduct = async (req, res) => {
+const updateProduct = async (req, res) => {
   try {
     const updatedProduct = await Product.update(req.body, {
       where: { id: req.params.id },
@@ -29,7 +29,7 @@ export const updateProduct = async (req, res) => {
   }
 };
 
-export const deleteProduct = async (req, res) => {
+const deleteProduct = async (req, res) => {
   try {
     await Product.destroy({
       where: { id: req.params.id },
@@ -38,4 +38,11 @@ export const deleteProduct = async (req, res) => {
   } catch (error) {
     res.status(500).json(error);
   }
+};
+
+module.exports = {
+  getAllProducts,
+  createProduct,
+  updateProduct,
+  deleteProduct,
 };
