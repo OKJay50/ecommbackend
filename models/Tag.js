@@ -10,8 +10,12 @@ const Tag = sequelize.define('Tag', {
   },
   tag_name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false, // Tag name cannot be null
   },
-});
+},
+  {
+    freezeTableName: true,
+  }
+);
 
 module.exports = Tag;

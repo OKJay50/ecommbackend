@@ -3,6 +3,7 @@ const Tag = require('../models/Tag.js');
 const getAllTags = async (req, res) => {
   try {
     const tags = await Tag.findAll();
+    console.log(tags);
     res.json(tags);
   } catch (error) {
     res.status(500).json(error);

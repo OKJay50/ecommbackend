@@ -22,15 +22,13 @@ This is the backend server for an eCommerce application built using Sequelize, M
 
 1. Clone the repository:
 
-
-   git clone https://github.com/OKJay50/ecommbackend.git
+   git clone <https://github.com/OKJay50/ecommbackend.git>
 
 Navigate to the project directory:
 
 cd ecommerce-backend
 
 2. Install dependencies:
-
 
 npm install
 
@@ -42,7 +40,7 @@ Copy the .env.example file to .env and update the values as needed.
 
 npm start
 
-The server should now be running on http://localhost:3001.
+The server should now be running on <http://localhost:3001>.
 
 Usage
 This backend provides a RESTful API for managing categories, products, and tags. You can use tools like Insomnia, Postman, or curl to interact with the API. Make sure your MySQL database is correctly configured and accessible.

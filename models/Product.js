@@ -10,11 +10,11 @@ const Product = sequelize.define('Product', {
   },
   product_name: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: false, // Product name cannot be null
   },
   price: {
     type: DataTypes.DECIMAL(10, 2),
-    allowNull: false,
+    allowNull: false, // Price cannot be null
   },
   stock: {
     type: DataTypes.INTEGER,

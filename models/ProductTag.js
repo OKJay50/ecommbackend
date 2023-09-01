@@ -10,6 +10,7 @@ const ProductTag = sequelize.define('ProductTag', {
   },
   product_id: {
     type: DataTypes.INTEGER,
+    allowNull: false, // Product ID cannot be null
     references: {
       model: 'Product',
       key: 'id',
@@ -17,6 +18,7 @@ const ProductTag = sequelize.define('ProductTag', {
   },
   tag_id: {
     type: DataTypes.INTEGER,
+    allowNull: false, // Tag ID cannot be null
     references: {
       model: 'Tag',
       key: 'id',
